@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: log-summarizer-job
+  namespace: default
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      name: log-summarizer-pod
+    spec:
+      serviceAccountName: log-summarizer-sa              # Use the service account with RBAC permissions
+      containers:
+      - name: log-summarizer
+        image: vikramsaran/log-summarizer-ai:latest      # Your summarizer container image
+        imagePullPolicy: Always
+        # Optional: command/args if your image requires explicit run cmd
+        # command: ["python3"]
+        # args: ["summarizer.py"]
+      restartPolicy: Never
