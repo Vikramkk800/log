@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demo-logger
+  labels:
+    run: demo-logger
+spec:
+  containers:
+  - name: log-generator
+    image: busybox
+    command:
+    - sh
+    - -c
+    - |
+      while true; do
+        echo "ERROR: Simulated error at $(date)" >&2
+        echo "WARNING: Simulated warning at $(date)" >&2
+        sleep 5
+      done
+
