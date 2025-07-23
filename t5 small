@@ -1,0 +1,15 @@
+" ============================================================================
+" Netrw Directory Listing                                        (netrw v171)
+"   /root/logai/t5-small
+"   Sorted by      name
+"   Sort sequence: [\/]$,\<core\%(\.\d\+\)\=\>,\.h$,\.c$,\.cpp$,\~\=\*$,*,\.o$,\.obj$,\.info$,\.swp$,\.bak$,\~$
+"   Quick Help: <F1>:help  -:go up dir  D:delete  R:rename  s:sort-by  x:special
+" ==============================================================================
+../
+./
+config.json
+generation_config.json
+model.safetensors
+special_tokens_map.json
+tokenizer.json
+tokenizer_config.json
