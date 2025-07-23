@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: log-summarizer-job
+  namespace: default
+spec:
+  backoffLimit: 0
+  template:
+    metadata:
+      name: log-summarizer-pod
+    spec:
+      serviceAccountName: log-summarizer-sa
+      containers:
+      - name: log-summarizer
+        image: vikramsaran/log-summarizer-ai:latest
+        imagePullPolicy: Always
+        # No 'command' or 'args' needed, uses ENTRYPOINT from Dockerfile
+      restartPolicy: Never
+
